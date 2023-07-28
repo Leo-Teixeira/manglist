@@ -16,19 +16,8 @@ class Home extends StatelessWidget {
   Widget build(context) {
     return Scaffold(
       backgroundColor: Color(0xff383838),
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: Text("Manglist"),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(FontAwesome5.search),
-          ),
-          CircleAvatar(child: Icon(FontAwesome5.person_booth))
-        ],
-      ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
+        padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
         child: Column(
           children: [
             CarouselSlider.builder(
@@ -38,11 +27,11 @@ class Home extends StatelessWidget {
                       Container(
                 child: Image.asset("assets/profil.jpg"),
               ),
-              options: CarouselOptions(height: 500),
+              options: CarouselOptions(height: 650),
             ),
             Column(
               children: [
-                Text("Dernière sortie"),
+                const Text("Dernière sortie"),
                 CarouselSlider.builder(
                   itemCount: 15,
                   itemBuilder: (BuildContext context, int itemIndex,
