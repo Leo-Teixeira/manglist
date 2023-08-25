@@ -7,6 +7,7 @@ import 'package:manglist/components/calendar.dart';
 import 'package:manglist/components/home.dart';
 import 'package:manglist/components/search.dart';
 import 'package:manglist/components/sortie.dart';
+import 'package:manglist/constant/globalColors.dart';
 
 class BottomNavBar extends StatelessWidget {
   final List<Widget> pages = [
@@ -35,14 +36,14 @@ class BottomNavBar extends StatelessWidget {
     final RxInt selectedIndex = 0.obs;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: backgroundColor,
         title: Obx(() => Text(titles[selectedIndex.value])),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(FontAwesome5.search),
+            icon: const Icon(FontAwesome5.search,),
           ),
-          const CircleAvatar(child: Icon(FontAwesome5.user))
+          const CircleAvatar(child: Icon(FontAwesome5.user), backgroundColor: buttonColor,)
         ],
       ),
       body: IndexedStack(
@@ -57,10 +58,10 @@ class BottomNavBar extends StatelessWidget {
         defaultIndex: 0,
         scaleFactor: 1.5,
         style: FluidNavBarStyle(
-            barBackgroundColor: Colors.black,
-            iconUnselectedForegroundColor: Colors.white,
-            iconSelectedForegroundColor: Colors.black,
-            iconBackgroundColor: Colors.red),
+            barBackgroundColor: backgroundColor,
+            iconUnselectedForegroundColor: textColor,
+            iconSelectedForegroundColor: backgroundColor,
+            iconBackgroundColor: buttonColor),
       ),
     );
   }
